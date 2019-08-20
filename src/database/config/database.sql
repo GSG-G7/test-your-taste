@@ -1,10 +1,10 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS users,location CASCADE;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    email VARCHAR
+    email VARCHAR UNIQUE
 );
 
 CREATE TABLE location (
