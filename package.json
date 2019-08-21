@@ -9,7 +9,7 @@
     "scripts": {
         "start": "node src/index.js",
         "dev": "nodemon src/index.js",
-        "test": "node test/test.js | tap-spec ",
+        "test": "NODE_ENV=test node test/test.js | tap-spec ",
         "cover": "nyc npm run test"
     },
     "repository": {

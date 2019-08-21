@@ -7,7 +7,12 @@ const { getForm } = require('./getForm');
 const { addData } = require('../database/quieres/postData');
 
 
-router.get('/', getData);
+router.get('/', (req, res, next) => {
+  getData()
+    .then((result) => res.render('home', { data: result }))
+    .catch((err) => next(err.stack));
+});
+
 router.get('/getform', getForm);
 router.post('/add', addData);
 
