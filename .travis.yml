@@ -1,5 +1,9 @@
 language: node_js
 node_js:
   - "lts/*"
-
+services:
+  - postgresql
+before_script:
+  - psql -c "CREATE DATABASE testtaste;" -U postgres
+  - psql -c "CREATE USER testtasteuser WITH PASSWORD '1';" -U postgres  
   
