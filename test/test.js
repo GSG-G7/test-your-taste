@@ -1,14 +1,11 @@
 const test = require('tape');
+const supertest = require('supertest');
+const app = require('../src/app');
 const { dbBuild } = require('../src/database/config/build');
 const { getData } = require('../src/database/quieres/getData');
 
-test('inital test', (t) => {
-  t.equal(2, 2, 'must be equal');
-  t.end();
-});
-
+// Test for Database
 test('test getData query', (t) => {
-  // console.log(getData());
   dbBuild()
     .then(() => getData())
     .then((result) => {
@@ -26,6 +23,59 @@ test('test getData query', (t) => {
     .catch((err) => {
       t.error(err);
       t.end();
+    });
+});
+
+// Test for Routes
+test('test for home route', (t) => {
+  supertest(app)
+    .get('/')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        const actual = res.text.includes('Test your taste © 2019 All Rights Reserved');
+        t.equal(actual, true, 'must be true');
+        t.end();
+      }
+    });
+});
+
+test('test for 404 error route', (t) => {
+  supertest(app)
+    .get('/test')
+    .expect(404)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        const actual = res.text.includes('Client Error 404');
+        t.equal(actual, true, 'must be Client Error 404');
+        t.end();
+      }
+    });
+});
+
+
+test('test for add Form route', (t) => {
+  supertest(app)
+    .get('/getform')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) {
+        t.error(err);
+        t.end();
+      } else {
+        const actual = res.text.includes('Test you Taste');
+        t.equal(actual, true, 'must be title [Test your Taste]');
+        t.end();
+      }
     });
 });
 
