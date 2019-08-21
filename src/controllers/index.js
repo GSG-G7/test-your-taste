@@ -4,7 +4,7 @@ const router = express.Router();
 const { client, server } = require('./error');
 const { getData } = require('../database/quieres/getData');
 const { getForm } = require('./getForm');
-const { addData } = require('../database/quieres/postData');
+const { addData } = require('./postData');
 
 
 router.get('/', (req, res, next) => {
