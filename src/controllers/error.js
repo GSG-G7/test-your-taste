@@ -8,6 +8,7 @@ exports.client = (req, res) => {
 exports.server = (err, req, res, next) => {
   res.status(500)
     .render('500', {
+      error: err,
       title: 'Server Error 500',
     });
 };

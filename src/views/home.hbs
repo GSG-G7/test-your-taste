@@ -1,13 +1,15 @@
   {{> header}}
 
   <section id="home" >
+    
       <ul>
           {{#each data}}
-            <li>{{this.name}}</li>
+          <h4>Location {{this.name}}</h4>
             <li>{{this.address}}</li>
-            <li>{{this.image}}</li>
+            <li><img alt="image" src={{this.image}}></li>
             <li>{{this.rate}}</li>
             <li>{{this.user_email}}</li>
+           <hr><br>
           {{/each}}
       </ul>
   </section>
