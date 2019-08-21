@@ -2,13 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 const { client, server } = require('./error');
+const {getData} = require('../database/quieres/getData');
 
 
-router.get('/', (req, res) => {
-    res.render('home', {
-        title: 'Test your Taste',
-    });
-});
+router.get('/', getData);
 
 router.use('*', client);
 router.use(server);
