@@ -10,11 +10,13 @@ CREATE TABLE users (
 CREATE TABLE location (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    adress TEXT,
+    address TEXT,
     image TEXT,
     rate INT,
     user_email VARCHAR,
     FOREIGN KEY (user_email) REFERENCES users(email) 
 );
+INSERT INTO users(name,email) values ('Hashem','h123@gmail.com'),('asmaa','asa@hotmail.com');
+
 
 COMMIT;
