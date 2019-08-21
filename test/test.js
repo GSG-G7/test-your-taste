@@ -3,11 +3,11 @@ const { dbBuild } = require('../src/database/config/build');
 const { getData } = require('../src/database/quieres/getData');
 
 test('inital test', (t) => {
-  t.equal(2, 2, 'must be equal');
-  t.end();
+    t.equal(2, 2, 'must be equal');
+    t.end();
 });
 
-test('test getData query', (t) => {
+/* test('test getData query', (t) => {
   // console.log(getData());
   dbBuild()
     .then(() => getData())
@@ -30,3 +30,4 @@ test('test getData query', (t) => {
 });
 
 test.onFinish(() => process.exit(0));
+ */
