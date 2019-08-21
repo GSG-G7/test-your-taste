@@ -1,3 +1,15 @@
-<h1>
-    {{ title }}
-</h1>
+  {{> header}}
+
+  <section id="home" >
+      <ul>
+          {{#each data}}
+            <li>{{this.name}}</li>
+            <li>{{this.address}}</li>
+            <li>{{this.image}}</li>
+            <li>{{this.rate}}</li>
+            <li>{{this.user_email}}</li>
+          {{/each}}
+      </ul>
+  </section>
+        
+  {{> footer}}
