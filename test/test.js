@@ -3,6 +3,7 @@ const supertest = require('supertest');
 const app = require('../src/app');
 const { dbBuild } = require('../src/database/config/build');
 const { getData } = require('../src/database/quieres/getData');
+const { saveData } = require('../src/database/quieres/postData');
 
 // Test for Database
 test('test getData query', (t) => {
@@ -26,7 +27,28 @@ test('test getData query', (t) => {
     });
 });
 
+test('test postData query', (t) => {
+  const actual = {
+    name: 'Testing',
+    address: 'Gaza',
+    image: 'https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg',
+    rate: '20',
+    user: 'rana',
+    user_email: 'ra@gmail.com',
+    add: 'Send',
+  };
+  saveData(actual)
+    .then((result) => {
+      t.equal(result.command, 'INSERT', 'Insert failed');
+      t.end();
+    }).catch((err) => {
+      t.error(err);
+      t.end();
+    });
+});
+
 // Test for Routes
+
 test('test for home route', (t) => {
   supertest(app)
     .get('/')
@@ -43,7 +65,6 @@ test('test for home route', (t) => {
       }
     });
 });
-
 test('test for 404 error route', (t) => {
   supertest(app)
     .get('/test')
@@ -60,7 +81,6 @@ test('test for 404 error route', (t) => {
       }
     });
 });
-
 
 test('test for add Form route', (t) => {
   supertest(app)
@@ -79,4 +99,25 @@ test('test for add Form route', (t) => {
     });
 });
 
+
+test('test for add route', (t) => {
+  supertest(app)
+    .post('/add')
+    .send(
+      {
+        name: 'abdallah',
+        address: 'gaza',
+        image: 'image',
+        rate: 2,
+        user_email: 'ra@gmail.com',
+      },
+    )
+    .expect(302)
+    .expect('Content-Type', /text/)
+    .end((err, res) => {
+      t.error(err);
+      t.equal(res.header.location, '/', 'Should redirect to / route');
+      t.end();
+    });
+});
 test.onFinish(() => process.exit(0));
