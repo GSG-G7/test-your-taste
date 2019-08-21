@@ -12,11 +12,15 @@ test('test getData query', (t) => {
   dbBuild()
     .then(() => getData())
     .then((result) => {
-      const expected = [
-        { id: 1, name: 'Hashem', email: 'h123@gmail.com' },
-        { id: 2, name: 'asmaa', email: 'asa@hotmail.com' },
-      ];
-      t.deepEqual(result, expected, 'should be the same result');
+      const expected = {
+        id: 1,
+        name: 'abdallah',
+        address: 'gaza',
+        image: 'image',
+        rate: 2,
+        user_email: 'ra@gmail.com',
+      };
+      t.deepEqual(result[0], expected, 'should be the same result');
       t.end();
     })
     .catch((err) => {

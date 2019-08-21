@@ -16,7 +16,10 @@ CREATE TABLE location (
     user_email VARCHAR,
     FOREIGN KEY (user_email) REFERENCES users(email) 
 );
-INSERT INTO users(name,email) values ('Hashem','h123@gmail.com'),('asmaa','asa@hotmail.com');
+
+INSERT INTO users(name,email) values ('abdallah','ra@gmail.com');
+
+INSERT INTO location(name,address,image,rate,user_email) values ('abdallah','gaza','image', 2 ,'ra@gmail.com');
 
 
 COMMIT;
