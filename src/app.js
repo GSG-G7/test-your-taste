@@ -18,12 +18,12 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(router);
 app.engine(
-    'hbs',
-    exphs({
-        extname: 'hbs',
-        layoutsDir: path.join(__dirname, 'views', 'layouts'),
-        defaultLayout: 'main',
-    }),
+  'hbs',
+  exphs({
+    extname: 'hbs',
+    layoutsDir: path.join(__dirname, 'views', 'layouts'),
+    defaultLayout: 'main',
+  }),
 );
 
 module.exports = app;
