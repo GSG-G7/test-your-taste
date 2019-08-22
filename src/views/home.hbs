@@ -1,17 +1,19 @@
   {{> header}}
 
-  <section id="home" >
+  <section class="taste__section" id="home" >
     
-      <ul>
-          {{#each data}}
-          <h4>Location {{this.name}}</h4>
-            <li>{{this.address}}</li>
-            <li><img alt="image" src={{this.image}}></li>
-            <li>{{this.rate}}</li>
-            <li>{{this.user_email}}</li>
-           <hr><br>
-          {{/each}}
-      </ul>
+    {{#each data}}
+        <ul class="taste__list">
+            <h4 class="taste__list__name"> Name : {{this.name}}</h4>
+            <li class="taste__list__img">
+                <img class="taste__list__imgsrc" alt="image" src={{this.image}} onerror="this.src='https://www.beachwoodplace.com/content/ggp-malls/beachwood-place/en/_jcr_content/par/row_927505531/row-par/image_content_box/image.img.jpg/1559232825414.jpg'">
+                
+                </li>
+            <li class="taste__list__address"> Address : {{this.address}}</li>
+            <li class="taste__list__rate">Rate out of 5 : {{this.rate}}</li>
+            <li class="taste__list__email">added by :{{this.user_email}}</li>
+        </ul>
+    {{/each}}
   </section>
         
   {{> footer}}
