@@ -6,7 +6,7 @@ let dbUrl = '';
 if (process.env.NODE_ENV === 'test') {
   dbUrl = process.env.test_taste_DB;
 } else {
-  dbUrl = process.env.taste_DB;
+  dbUrl = process.env.USERS_DB_URL;
 }
 
 if (!dbUrl) throw new Error('No Database URL!!!');
