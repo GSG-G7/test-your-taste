@@ -5,7 +5,7 @@ exports.saveData = (data) => {
     name, address, image, rate, user_email,
   } = data;
   const sql = {
-    text: 'INSERT INTO location (name, address, image, rate, user_email)VALUES ($1, $2, $3, $4, $5);',
+    text: 'INSERT INTO location (name, address, image, rate, user_email)VALUES ($1, $2, $3, $4, $5) RETURNING * ;',
     values: [name, address, image, rate, user_email],
   };
   return dbconnection.query(sql);
