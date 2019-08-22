@@ -1,13 +1,13 @@
   {{> header}}
 
-<form action="/add" method="post" id="form">
+<form action="/add" method="post" class="form" id="form">
     <input type="text"  name="name" class="name" placeholder="Enter new location" area-label="" required>
     <input type="text" name="address" class="address" placeholder="Enter the address" area-label="" required>
     <input type="text" name="image" class="image" placeholder="Enter the image" area-label="" required>
-    <input type="text" name="rate" class="rate" placeholder="Enter the rate" area-label="" required>
-    <input type="text" name="user" class="user" placeholder="Enter the user" area-label="" required>
-    <input type="email" name="user_email" class="user_email" placeholder="Enter the user-email" area-label="" required>
-    <input type="submit" name="add" id="addBtn" value="Send" area-label="">
+    <input type="number" min="1" max="5" name="rate" class="rate" placeholder="Enter the rate" area-label="" required>
+   {{!--  <input type="text" name="user" class="user" placeholder="Enter the user" area-label=""> --}}
+    <input type="email" name="user_email" class="user_email" placeholder="Enter the user-email" area-label="" required> 
+    <input type="submit" name="add" id="addBtn" class="" value="Send" area-label="">
 </form>
 
   {{> footer}}

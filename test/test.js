@@ -14,7 +14,7 @@ test('test getData query', (t) => {
         id: 1,
         name: 'abdallah',
         address: 'gaza',
-        image: 'image',
+        image: 'https://www.beachwoodplace.com/content/ggp-malls/beachwood-place/en/_jcr_content/par/row_927505531/row-par/image_content_box/image.img.jpg/1559232825414.jpg',
         rate: 2,
         user_email: 'ra@gmail.com',
       };
@@ -104,15 +104,13 @@ test('test for add Form route', (t) => {
 test('test for add route', (t) => {
   supertest(app)
     .post('/add')
-    .send(
-      {
-        name: 'abdallah',
-        address: 'gaza',
-        image: 'image',
-        rate: 2,
-        user_email: 'ra@gmail.com',
-      },
-    )
+    .send({
+      name: 'abdallah',
+      address: 'gaza',
+      image: 'image',
+      rate: 2,
+      user_email: 'ra@gmail.com',
+    })
     .expect(302)
     .expect('Content-Type', /text/)
     .end((err, res) => {

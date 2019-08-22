@@ -10,8 +10,8 @@ form.addEventListener('submit', (e) => {
   if (!name.trim() || !address.trim() || !image.trim() || !rate.trim() || !user.trim() || !user_email.trim()) {
     alert('fill all field');
     e.preventDefault();
-  }else if(isNaN(rate)){
-      alert('enter rate as number');
-      e.preventDefault();
+  } else if (!Number.isInteger(rate)) {
+    alert('enter rate as number');
+    e.preventDefault();
   }
 });

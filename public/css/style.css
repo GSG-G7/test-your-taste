@@ -1,0 +1,105 @@
+body {
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(107, 111, 121, 0.73)), url(../assets/taste_bg.jpg);
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+/* header */
+
+.taste {
+    font-size: 40px;
+    color: #433f3f
+}
+
+
+/* main page */
+
+.btn-add {
+    display: block;
+    width: 200px;
+    padding: 0.3em;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #3f6892;
+    text-decoration: none;
+    font-size: 1.5em;
+    border: 3px solid white;
+    border-radius: 20px;
+}
+
+
+/* list */
+
+.taste__section {
+    /*  margin: 0.5em 12em; */
+}
+
+.taste__list {
+    background-color: rgba(135, 138, 145, 0.32);
+    list-style-type: none;
+    display: inline-block;
+    width: auto;
+    margin: 0.5rem;
+    padding: 0.2rem;
+    position: relative;
+}
+
+.taste__list__imgsrc {
+    width: 15rem;
+    height: 15rem;
+}
+
+
+/* form */
+
+.form {
+    margin: 2rem;
+    padding: 2rem;
+    background-size: cover;
+    height: auto;
+    min-height: 218px;
+}
+
+input[type=text],
+input[type=email],
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #3f6892;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* footer */
+
+.footer {
+    background: #1f1c1c81;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.5rem;
+}

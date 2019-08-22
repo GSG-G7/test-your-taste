@@ -19,7 +19,7 @@ CREATE TABLE location (
 
 INSERT INTO users(name,email) values ('abdallah','ra@gmail.com');
 
-INSERT INTO location(name,address,image,rate,user_email) values ('abdallah','gaza','image', 2 ,'ra@gmail.com');
+INSERT INTO location(name,address,image,rate,user_email) values ('abdallah','gaza','https://www.beachwoodplace.com/content/ggp-malls/beachwood-place/en/_jcr_content/par/row_927505531/row-par/image_content_box/image.img.jpg/1559232825414.jpg', 2 ,'ra@gmail.com');
 
 
 COMMIT;
