@@ -29,7 +29,7 @@ test('test getData query', (t) => {
 
 test('test postData query', (t) => {
   const actual = {
-    name: 'Testing',
+    name: 'Rana',
     address: 'Gaza',
     image: 'https://image.shutterstock.com/image-photo/white-transparent-leaf-on-mirror-260nw-1029171697.jpg',
     rate: '20',
@@ -39,7 +39,8 @@ test('test postData query', (t) => {
   };
   saveData(actual)
     .then((result) => {
-      t.equal(result.command, 'INSERT', 'Insert failed');
+      t.equal(result.rows[0].name, actual.name, 'The name should be Rana ');
+
       t.end();
     }).catch((err) => {
       t.error(err);
