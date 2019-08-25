@@ -9,7 +9,7 @@ const { addData } = require('./postData');
 
 router.get('/', (req, res, next) => {
   getData()
-    .then((result) => res.render('home', { data: result }))
+    .then((result) => res.render('home', { data: result.rows }))
     .catch((err) => next(err.stack));
 });
 
